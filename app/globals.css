@@ -2,4 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.image-container {
+    max-width: 500px; /* Adjust this value as needed */
+    max-height: 500px; /* Adjust this value as needed */
+    overflow: hidden;
+}
 
+.image-container_artijin {
+    max-width: 1000px; /* Adjust this value as needed */
+    max-height: 1000px; /* Adjust this value as needed */
+    overflow: hidden;
+}
