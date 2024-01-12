@@ -1,11 +1,19 @@
+'use client'
+import { useEffect , useState } from "react"
 import Artijin from '@/components/landinpage_components/artijin'
 import CategorySection from '@/components/landinpage_components/category_section'
 import Essentials from '@/components/landinpage_components/essentials'
 import Image from 'next/image'
 
 export default function Home() {
+
+  useEffect(() => {
+
+  },[]);
+
   return (
     <>
+      {/* home */}
       <div className="text-center py-6">
         <span className="font-extralight text-center">
           Style for Every Identity: Embrace Your True Self with KEON

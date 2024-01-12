@@ -1,16 +1,18 @@
+
+import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className="px-5 py-3 flex justify-between  border-b-2">
+    <div className="px-5 py-3 flex justify-between custom-border">
       <div className="flex items-center">
-        <a className="m-2">Bottoms</a>
-        <a className="m-2">Tshirts</a>
-        <a className="m-2">Overshirt</a>
-        <a className="m-2">Jacket</a>
+        <Link href={'/in/Bottoms'} className="m-2">Bottoms</Link>
+        <Link href={'/in/Tshirts'} className="m-2">Tshirts</Link>
+        <Link href={'/in/Overshirt'} className="m-2">Overshirt</Link>
+        <Link href={'/in/Jacket'} className="m-2">Jacket</Link>
       </div>
       <div className="font-montserrat font-semibold text-3xl p-1">
-        <a>K  E  O  N</a>
+        <a href={'/'}>K  E  O  N</a>
       </div>
       <div className="flex items-center">
         <a className="m-2">Search</a>
@@ -23,3 +25,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+

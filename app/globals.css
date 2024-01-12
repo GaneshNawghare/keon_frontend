@@ -13,3 +13,10 @@
     max-height: 1000px; /* Adjust this value as needed */
     overflow: hidden;
 }
+
+.custom-border {
+    border-bottom: 0.5px solid  #5C6672;
+    /* You can set the color (#000 for black in this example) */
+    padding: 10px;
+    /* Add padding for better visibility */
+}
