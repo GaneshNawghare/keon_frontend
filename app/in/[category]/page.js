@@ -1,8 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
 import Image from 'next/image'
-import { FcLike } from "react-icons/fc";
-import { FcLikePlaceholder } from "react-icons/fc";
 import axios from "axios"
 
 export default function Category({ params }) {
@@ -98,11 +96,11 @@ export default function Category({ params }) {
                         <p className="mt-5">{ele.name}</p>
                         <p className="mt-2">Rs: {ele.rs}</p>
                       </div>
-                      <div className="mt-4">
+                      <div className="mt-6">
                         {ele.like ? (
-                          <FcLike onClick={()=>{}} size={30} />
+                          <Image src="/like.svg" width={28} height={28} alt='like'/>
                         ) : (
-                          <FcLikePlaceholder size={30} />
+                          <Image src="/unlike.svg" width={28} height={28} alt='unlike'/>
                         )}
                       </div>
                     </div>
