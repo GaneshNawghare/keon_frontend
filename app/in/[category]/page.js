@@ -53,14 +53,17 @@ export default function Category({ params }) {
 
         {
           categoryData.length > 0 ? (
+            <>
             <div className="flex justify-center">
-              <a className="mx-2, mt-10">All</a>
+              <a className="mx-2, mt-10 mb-4">All</a>
               {
                 categoryData[0]?.child_categories?.map((ele) => (
                   <a className="mx-2 mt-10">{ele.name}</a>
                 ))
               }
             </div>
+            <div className="w-full h-[1px] bg-[#5C6672] bg-opacity-40"></div>
+             </>
           ) : (
             <p>Loading...</p>
           )
