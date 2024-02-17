@@ -6,11 +6,12 @@ import axios from "axios"
 export default function Category({ params }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [categoryData, setCategoryData] = useState([
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000', like: true },
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000', like: false },
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000', like: false },
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000', like: false }
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'}
   ])
+  const [like,setLike] =useState(false);
 
   const categoriesIds = {
     Tshirts: "65327721144eb7a0ab375762"
@@ -97,10 +98,10 @@ export default function Category({ params }) {
                         <p className="mt-2">Rs: {ele.rs}</p>
                       </div>
                       <div className="mt-6">
-                        {ele.like ? (
-                          <Image src="/like.svg" width={28} height={28} alt='like'/>
+                        {like ? (
+                          <Image onClick={()=>setLike(!like)} src="/like.svg" width={28} height={28} alt='like'/>
                         ) : (
-                          <Image src="/unlike.svg" width={28} height={28} alt='unlike'/>
+                          <Image onClick={()=>{setLike(!like)}} src="/unlike.svg" width={28} height={28} alt='unlike'/>
                         )}
                       </div>
                     </div>
