@@ -10,6 +10,7 @@ const Navbar = () => {
         <Link href={'/in/Tshirts'} className="m-2">Tshirts</Link>
         <Link href={'/in/Overshirt'} className="m-2">Overshirt</Link>
         <Link href={'/in/Jacket'} className="m-2">Jacket</Link>
+        <Link href={'/product/123'} className="m-2">Product</Link>
       </div>
       <div className="font-montserrat font-semibold text-3xl p-1">
         <a href={'/'}>K  E  O  N</a>
