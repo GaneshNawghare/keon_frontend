@@ -2,16 +2,17 @@
 import { useEffect, useState } from "react"
 import Image from 'next/image'
 import axios from "axios"
+import Link from 'next/link'
 
 export default function Category({ params }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [categoryData, setCategoryData] = useState([
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'},
-    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000'}
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000' },
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000' },
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000' },
+    { name: 'Plain White Tshirt', size: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], image: '/trending1.jpg', rs: '1000' }
   ])
-  const [like,setLike] =useState(false);
+  const [like, setLike] = useState(false);
 
   const categoriesIds = {
     Tshirts: "65327721144eb7a0ab375762"
@@ -53,16 +54,16 @@ export default function Category({ params }) {
         {
           categoryData.length > 0 ? (
             <>
-            <div className="flex justify-center">
-              <a className="mx-2, mt-10 mb-4">All</a>
-              {
-                categoryData[0]?.child_categories?.map((ele) => (
-                  <a className="mx-2 mt-10">{ele.name}</a>
-                ))
-              }
-            </div>
-            <div className="w-full h-[1px] bg-[#5C6672] bg-opacity-40"></div>
-             </>
+              <div className="flex justify-center">
+                <a className="mx-2, mt-10 mb-4">All</a>
+                {
+                  categoryData[0]?.child_categories?.map((ele) => (
+                    <a className="mx-2 mt-10">{ele.name}</a>
+                  ))
+                }
+              </div>
+              <div className="w-full h-[1px] bg-[#5C6672] bg-opacity-40"></div>
+            </>
           ) : (
             <p>Loading...</p>
           )
@@ -78,7 +79,8 @@ export default function Category({ params }) {
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
                     <div className="relative">
-                      <Image src={ele.image} width={540} height={640} alt='' />
+                      <Link key={index} href={'/product/123'} className="m-2"><Image key={index} src={ele.image} width={540} height={640} alt='' /></Link>
+
                       {hoveredIndex === index && (
                         <div className="absolute bottom-0 left-0 w-full h-[144px] bg-gray-200 bg-opacity-80 p-4">
                           <div className="p-2 font-montserrat font-normal text-base leading-6">Add Size</div>
@@ -99,9 +101,9 @@ export default function Category({ params }) {
                       </div>
                       <div className="mt-6">
                         {like ? (
-                          <Image onClick={()=>setLike(!like)} src="/like.svg" width={28} height={28} alt='like'/>
+                          <Image onClick={() => setLike(!like)} src="/like.svg" width={28} height={28} alt='like' />
                         ) : (
-                          <Image onClick={()=>{setLike(!like)}} src="/unlike.svg" width={28} height={28} alt='unlike'/>
+                          <Image onClick={() => { setLike(!like) }} src="/unlike.svg" width={28} height={28} alt='unlike' />
                         )}
                       </div>
                     </div>
